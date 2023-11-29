@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "748781621652",
+    "project_id": "telalogin-f6199",
+    "storage_bucket": "telalogin-f6199.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748781621652:android:ddaddf989825564d54ff81",
+        "android_client_info": {
+          "package_name": "com.example.responsividade"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnEbFvX9EcJ1vGj4IFgg81Z_qyAPVz_4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
