@@ -39,12 +39,15 @@ class _RegisterPageMState extends State<RegisterPageM> {
 
         // TextField Email
         Padding(
-          padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+          padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02),
           child: SizedBox(width: 470, child: emailTextFIeld()),
         ),
 
         //TextField Senha
-        SizedBox(width: 470, child: senhaTextField()),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02),
+          child: SizedBox(width: 470, child: senhaTextField()),
+        ),
 
         SizedBox(
           height: screenHeight * 0.03,

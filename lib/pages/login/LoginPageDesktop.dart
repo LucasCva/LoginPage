@@ -14,7 +14,7 @@ class _LoginPageDState extends State<LoginPageD> {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
-
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
         body: Column(
       children: [
@@ -38,12 +38,17 @@ class _LoginPageDState extends State<LoginPageD> {
 
         // TextField Email
         Padding(
-          padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+          padding: EdgeInsets.symmetric(
+              horizontal: screenWidth * 0.02, vertical: screenHeight * 0.02),
           child: SizedBox(width: 470, child: emailTextFIeld()),
         ),
 
         //TextField Senha
-        SizedBox(width: 470, child: senhaTextField()),
+        Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: screenWidth * 0.02, vertical: screenHeight * 0.02),
+          child: SizedBox(width: 470, child: senhaTextField()),
+        ),
 
         SizedBox(
           height: screenHeight * 0.03,

@@ -14,6 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+        //usa uma classe criado que verifica o tamanho da tela
         body: ResponsiveLayout(
             layoutMobile: LoginPageM(), layoutDesktop: LoginPageD()));
   }
