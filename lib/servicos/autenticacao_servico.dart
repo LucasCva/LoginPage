@@ -1,4 +1,7 @@
+import 'dart:js';
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
 class AutenticacaoServico {
   //pediu uma instancia do firebases
@@ -26,9 +29,16 @@ class AutenticacaoServico {
     required String email,
     required String senha,
   }) async {
-    await _firebaseAuth.signInWithEmailAndPassword(
-      email: email,
-      password: senha,
-    );
+    try {
+      await _firebaseAuth.signInWithEmailAndPassword(
+        email: email,
+        password: senha,
+      );
+    } on FirebaseAuthException catch (e) {
+      print(e);
+      if (e == "firebase_auth/invalid-login-credentials") {
+        print("Email ou senha incorretos!!");
+      }
+    }
   }
 }

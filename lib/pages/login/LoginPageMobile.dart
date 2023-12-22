@@ -66,7 +66,6 @@ class _LoginPageState extends State<LoginPageM> {
                 email: emailTextFIeld.emailController.text,
                 senha: senhaTextField.senhaController.text,
               );
-              print("Logou");
             },
             child: Container(
               height: 60,

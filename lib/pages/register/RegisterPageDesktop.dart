@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsividade/components/email_textfield.dart';
 import 'package:responsividade/components/senha_textfield.dart';
+import 'package:responsividade/servicos/autenticacao_servico.dart';
 
 class RegisterPageD extends StatefulWidget {
   const RegisterPageD({super.key});
@@ -13,6 +14,7 @@ class _RegisterPageDState extends State<RegisterPageD> {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
+    AutenticacaoServico _autenticacao = AutenticacaoServico();
 
     return Scaffold(
         body: SingleChildScrollView(
@@ -50,20 +52,27 @@ class _RegisterPageDState extends State<RegisterPageD> {
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Container(
-              height: 60,
-              width: 470,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: const Color.fromARGB(255, 54, 54, 54),
-              ),
-              child: const Center(
-                child: Text(
-                  "Entrar",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+            child: GestureDetector(
+              onTap: () {
+                _autenticacao.cadastrar(
+                    email: emailTextFIeld.emailController.text,
+                    senha: senhaTextField.senhaController.text);
+              },
+              child: Container(
+                height: 60,
+                width: 470,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: const Color.fromARGB(255, 54, 54, 54),
+                ),
+                child: const Center(
+                  child: Text(
+                    "Entrar",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
